@@ -1,98 +1,46 @@
-# King Soft - API Server with Authentication
+# Project Documentation
 
-مشروع خادم برمجي احترافي مع نظام مصادقة ولوحة تحكم
+## Setup Instructions
 
-## المميزات ✨
-
-- ✅ خادم Node.js + Express
-- ✅ قاعدة بيانات PostgreSQL
-- ✅ نظام مصادقة كامل (تسجيل دخول/تسجيل)
-- ✅ JWT Token Authentication
-- ✅ لوحة تحكم HTML/CSS/JavaScript
-- ✅ API RESTful
-
-## المتطلبات
-
-- Node.js (v14 أو أحدث)
-- PostgreSQL (v12 أو أحدث)
-- npm أو yarn
-
-## التثبيت
-
-### 1. استنساخ المستودع
-```bash
-git clone https://github.com/hulooltech/king-soft.git
-cd king-soft
-```
-
-### 2. تثبيت المكتبات
-```bash
-npm install
-```
-
-### 3. إعداد قاعدة البيانات
-- إنشء قاعدة بيانات جديدة في PostgreSQL باسم `king_soft_db`
-- تشغيل ملف `database.sql` لإنشاء الجداول
-
-### 4. إعداد متغيرات البيئة
-عدّل ملف `.env` بمعلومات قاعدة البيانات الخاصة بك
-
-### 5. تشغيل الخادم
-```bash
-npm run dev
-```
-
-الخادم سيعمل على: http://localhost:3000
-
-## الهيكل
-
-```
-king-soft/
-├── server/
-│   ├── index.js
-│   ├── routes/
-│   │   ├── auth.js
-│   │   └── users.js
-│   ├── controllers/
-│   │   ├── authController.js
-│   │   └── userController.js
-│   ├── middleware/
-│   │   └── auth.js
-│   └── config/
-│       └── database.js
-├── public/
-│   ├── index.html
-│   ├── login.html
-│   ├── register.html
-│   ├── dashboard.html
-│   ├── css/
-│   │   └── style.css
-│   └── js/
-│       ├── auth.js
-│       └── dashboard.js
-├── database.sql
-├── package.json
-├── .env
-└── README.md
-```
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/hulooltech/king-soft.git
+   ```
+2. **Install dependencies:**
+   Navigate to the project directory and run:
+   ```bash
+   npm install
+   ```
+3. **Run the application:**
+   Start the application with:
+   ```bash
+   npm start
+   ```
 
 ## API Endpoints
 
-### المصادقة
-- `POST /api/auth/register` - تسجيل مستخدم جديد
-- `POST /api/auth/login` - تسجيل الدخول
-- `GET /api/auth/profile` - الحصول على بيانات المستخدم
+1. **GET /api/resource**
+   - Description: Fetches all resources.
+   - Response: List of resources.
 
-### المستخدمون
-- `GET /api/users` - قائمة المستخدمين
-- `GET /api/users/:id` - بيانات مستخدم معين
-- `PUT /api/users/:id` - تحديث بيانات مستخدم
-- `DELETE /api/users/:id` - حذف مستخدم
+2. **POST /api/resource**
+   - Description: Creates a new resource.
+   - Request Body: `{ "name": "resource name", "data": "data" }`
+   - Response: Created resource information.
 
-## الترخيص
+3. **GET /api/resource/:id**
+   - Description: Fetches a resource by ID.
+   - Response: Resource information.
 
-MIT License
+4. **PUT /api/resource/:id**
+   - Description: Updates an existing resource.
+   - Request Body: `{ "name": "updated resource name", "data": "updated data" }`
+   - Response: Updated resource information.
+
+5. **DELETE /api/resource/:id**
+   - Description: Deletes a resource by ID.
+   - Response: Confirmation of deletion.
 
 ---
 
-**تم الإنشاء بواسطة**: King Soft Team 🚀
+> Generated on: 2026-03-02 22:48:32 UTC
